@@ -1,4 +1,4 @@
-package org.example.dr;
+package org.example.Droids;
 
 public class AttackerDroid extends Droid {
 
