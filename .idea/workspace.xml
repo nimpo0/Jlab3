@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ab7b37f-edf0-4525-95c9-a54d06da7a1f" name="Changes" comment="Зробила базовий клас Droid і додала похідні до нього класи">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Battles/Battle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Menu/DroidFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Menu/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dr/AttackerDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/AttackerDroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dr/BomberDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/BomberDroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dr/ChameleonDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/ChameleonDroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dr/Droid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/Droid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dr/FreezerDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/FreezerDroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dr/HealerDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/HealerDroid.java" afterDir="false" />
-    </list>
+    <list default="true" id="3ab7b37f-edf0-4525-95c9-a54d06da7a1f" name="Changes" comment="Додала меню" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,12 +76,21 @@
       <option name="project" value="LOCAL" />
       <updated>1726767854574</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Додала меню">
+      <option name="closed" value="true" />
+      <created>1726775279718</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1726775279718</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
     <MESSAGE value="Зробила базовий клас Droid і додала похідні до нього класи" />
-    <option name="LAST_COMMIT_MESSAGE" value="Зробила базовий клас Droid і додала похідні до нього класи" />
+    <MESSAGE value="Додала меню" />
+    <option name="LAST_COMMIT_MESSAGE" value="Додала меню" />
   </component>
 </project>
