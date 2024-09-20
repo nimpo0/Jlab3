@@ -39,7 +39,7 @@ public class DroidFactory {
             System.out.println("Значення атаки має бути в діапазоні 1-50.");
         }
 
-        Droid newDroid = null; // Змінна для нового дроїда
+        Droid newDroid = null;
 
         switch (droidType) {
             case 1:
@@ -78,7 +78,7 @@ public class DroidFactory {
                     if (counterAttackDamage >= 1 && counterAttackDamage <= 15) break;
                     System.out.println("Значення має бути в діапазоні 1-15.");
                 }
-                newDroid = new ChameleonDroid(name, health, damage, camouflageDuration, counterAttackDamage);
+                newDroid = new ChameleonDroid(name, health, damage, camouflageDuration);
                 break;
 
             case 4:
@@ -113,6 +113,6 @@ public class DroidFactory {
             System.out.println("Дроїд " + name + " успішно створений!");
         }
 
-        return newDroid; // Повертаємо створеного дроїда
+        return newDroid;
     }
 }

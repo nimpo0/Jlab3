@@ -1,6 +1,6 @@
 package org.example.Droids;
 
-public class Droid {
+public abstract class Droid {
 
     protected String name;
     protected int health;
@@ -18,7 +18,7 @@ public class Droid {
         this.health = health;
         this.damage = damage;
         this.isFrozen = false;
-        this.maxHealth = health; // максимальне здоров'я дорівнює початковому
+        this.maxHealth = health;
     }
 
     public String getName() {
@@ -37,7 +37,7 @@ public class Droid {
         if (health > maxHealth) {
             this.health = maxHealth;
         } else if (health < 0) {
-            this.health = 0; // здоров'я не може бути меншим за 0
+            this.health = 0;
         } else {
             this.health = health;
         }
@@ -57,12 +57,15 @@ public class Droid {
         System.out.println(this.name + " розморозився і може знову діяти.");
     }
 
+    public void updateRound(){
+
+    }
+
     public void takeDamage(int damage) {
         this.setHealth(this.health - damage);
         System.out.println(this.name + " отримав " + damage + " пошкоджень. Залишилось здоров'я: " + this.health);
     }
 
-    // Додавання методу атаки
     public void attack(Droid enemy) {
         if (this.isFrozen) {
             System.out.println(this.name + " не може атакувати, оскільки заморожений!");

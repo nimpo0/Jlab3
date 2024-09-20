@@ -16,21 +16,17 @@ public class AttackerDroid extends Droid {
         this.charge = 0;
         this.roundsToCharge = roundsToCharge;
     }
-
     public int getCharge() {
         return charge;
-    }
-
-    public void setCharge(int charge) {
-        this.charge = charge;
     }
 
     public int getRoundsToCharge() {
         return roundsToCharge;
     }
 
-    public void setRoundsToCharge(int roundsToCharge) {
-        this.roundsToCharge = roundsToCharge;
+    @Override
+    public void updateRound() {
+        charge();
     }
 
     public void charge() {
@@ -42,11 +38,11 @@ public class AttackerDroid extends Droid {
         }
     }
 
-    public void strongAttack(Droid enemy) {
+    public void strongAttack(Droid target) {
         if (charge >= roundsToCharge) {
             int strongDamage = this.damage * 2;
-            System.out.println(this.name + " виконує сильну атаку на " + enemy.getName() + " і завдає " + strongDamage + " пошкоджень.");
-            enemy.takeDamage(strongDamage);
+            System.out.println(this.name + " виконує сильну атаку на " + target.getName() + " і завдає " + strongDamage + " пошкоджень.");
+            target.takeDamage(strongDamage);
             charge = 0;
         } else {
             System.out.println(this.name + " не готовий до сильної атаки. Потрібно зарядитися ще " + (roundsToCharge - charge) + " раундів.");
@@ -63,4 +59,6 @@ public class AttackerDroid extends Droid {
                 ", roundsToCharge=" + roundsToCharge +
                 '}';
     }
+
 }
+

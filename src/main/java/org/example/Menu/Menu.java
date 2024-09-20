@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
-    private List<Droid> droids = new ArrayList<>(); // Список дроїдів
+    private List<Droid> droids = new ArrayList<>();
     private Scanner scanner = new Scanner(System.in);
 
     public void showMenu() {
@@ -23,14 +23,14 @@ public class Menu {
             System.out.print("Виберіть опцію: ");
 
             int option = scanner.nextInt();
-            scanner.nextLine(); // Очищуємо буфер
+            scanner.nextLine();
 
             switch (option) {
                 case 1:
                     createDroid();
                     break;
                 case 2:
-                    showDroids(); // Виклик нового методу
+                    showDroids();
                     break;
                 case 3:
                     oneOnOneBattle();
@@ -39,10 +39,10 @@ public class Menu {
                     teamBattle();
                     break;
                 case 5:
-                    System.out.println("Записати проведений бій у файл (поки що без коду).");
+                    System.out.println("поки що без коду");
                     break;
                 case 6:
-                    System.out.println("Відтворити проведений бій зі збереженого файлу (поки що без коду).");
+                    System.out.println("поки що без коду2");
                     break;
                 case 7:
                     System.out.println("Вихід з програми.");
@@ -57,7 +57,7 @@ public class Menu {
         DroidFactory factory = new DroidFactory();
         Droid droid = factory.createDroid();
         if (droid != null) {
-            droids.add(droid); // Додаємо дроїда до списку
+            droids.add(droid);
         }
     }
 
@@ -77,46 +77,51 @@ public class Menu {
             System.out.println("Необхідно створити щонайменше 2 дроїда для бою 1 на 1.");
             return;
         }
-        System.out.println("Оберіть дроїдів для бою 1 на 1:");
+
+        showDroids();
+
         System.out.print("Введіть номер першого дроїда: ");
         int index1 = scanner.nextInt() - 1;
+
         System.out.print("Введіть номер другого дроїда: ");
         int index2 = scanner.nextInt() - 1;
 
         if (index1 >= 0 && index1 < droids.size() && index2 >= 0 && index2 < droids.size() && index1 != index2) {
             Battle.oneOnOne(droids.get(index1), droids.get(index2));
         } else {
-            System.out.println("Невірний вибір дроїдів.");
+            System.out.println("Невірний вибір дроїдів. Перевірте, чи обидва дроїди різні і чи їх номери вірні.");
         }
     }
+
 
     private void teamBattle() {
         if (droids.size() < 6) {
             System.out.println("Необхідно створити щонайменше 6 дроїдів для командного бою.");
             return;
         }
-        System.out.println("Оберіть дроїдів для командного бою (по 3 дроїди в команді):");
 
-        System.out.print("Введіть номери дроїдів для команди 1 (3 номери через пробіл): ");
+        showDroids();
+
+        System.out.println("Оберіть дроїдів для команди 1 (3 номери через пробіл): ");
         List<Droid> team1 = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             int index = scanner.nextInt() - 1;
-            if (index >= 0 && index < droids.size()) {
+            if (index >= 0 && index < droids.size() && !team1.contains(droids.get(index))) {
                 team1.add(droids.get(index));
             } else {
-                System.out.println("Невірний вибір дроїда.");
+                System.out.println("Невірний вибір дроїда або дроїд вже був вибраний.");
                 return;
             }
         }
 
-        System.out.print("Введіть номери дроїдів для команди 2 (3 номери через пробіл): ");
+        System.out.println("Оберіть дроїдів для команди 2 (3 номери через пробіл): ");
         List<Droid> team2 = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             int index = scanner.nextInt() - 1;
-            if (index >= 0 && index < droids.size()) {
+            if (index >= 0 && index < droids.size() && !team1.contains(droids.get(index)) && !team2.contains(droids.get(index))) {
                 team2.add(droids.get(index));
             } else {
-                System.out.println("Невірний вибір дроїда.");
+                System.out.println("Невірний вибір дроїда або дроїд вже був вибраний.");
                 return;
             }
         }
