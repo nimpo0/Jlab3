@@ -1,16 +1,20 @@
 package org.example.Droids;
 
+import org.example.file.WorkWithFile;
+
 public class ChameleonDroid extends Droid {
 
     protected int camouflageDuration;
     private int remainingCamouflage;
     private boolean isAdapted;
+    private boolean camouflageUsed;
 
     public ChameleonDroid() {
         super();
         this.camouflageDuration = 2;
         this.remainingCamouflage = 0;
         this.isAdapted = false;
+        this.camouflageUsed = false;
     }
 
     public ChameleonDroid(String name, int health, int damage, int camouflageDuration) {
@@ -18,6 +22,7 @@ public class ChameleonDroid extends Droid {
         this.camouflageDuration = camouflageDuration;
         this.remainingCamouflage = 0;
         this.isAdapted = false;
+        this.camouflageUsed = false;
     }
 
     public int getCamouflageDuration() {
@@ -28,53 +33,37 @@ public class ChameleonDroid extends Droid {
         return remainingCamouflage;
     }
 
-    public void setCamouflageDuration(int camouflageDuration) {
-        this.camouflageDuration = camouflageDuration;
-    }
-
-    @Override
-    public void updateRound() {
-        decrementCamouflage();
-    }
-
-
-    public void activateCamouflage() {
-        if (this.remainingCamouflage == 0) {
+    public void activateCamouflage(WorkWithFile workWithFile) {
+        if (!camouflageUsed) {
             this.remainingCamouflage = this.camouflageDuration;
-            System.out.println(this.name + " активує камуфляж на " + this.camouflageDuration + " раундів.");
+            camouflageUsed = true;
+            logAndPrint(this.name + " активує камуфляж на " + this.camouflageDuration + " раундів.", workWithFile);
+        } else {
+            logAndPrint(this.name + " не може активувати камуфляж, оскільки він вже використаний.", workWithFile);
         }
     }
 
-    public void decrementCamouflage() {
+    public void decrementCamouflage(WorkWithFile workWithFile) {
         if (this.remainingCamouflage > 0) {
             this.remainingCamouflage--;
-            System.out.println(this.name + " має камуфляж ще на " + this.remainingCamouflage + " раундів.");
+            logAndPrint(this.name + " має камуфляж ще на " + this.remainingCamouflage + " раундів.", workWithFile);
             if (this.remainingCamouflage == 0) {
-                System.out.println(this.name + " втрачає камуфляж.");
+                logAndPrint(this.name + " втрачає камуфляж.", workWithFile);
             }
-        }
-    }
-
-    public void adapt(int receivedDamage) {
-        if (!isAdapted) {
-            if (receivedDamage > 20) {
-                System.out.println(this.name + " адаптується, збільшуючи свою оборону на 10!");
-                this.health += 10;
-            } else {
-                System.out.println(this.name + " адаптується, збільшуючи свою атаку на 5!");
-                this.damage += 5;
-            }
-            isAdapted = true;
         }
     }
 
     @Override
-    public void takeDamage(int damage) {
-        if (this.remainingCamouflage > 0) {
-            System.out.println(this.name + " уникнув частини атаки завдяки камуфляжу.");
+    public void updateRound(WorkWithFile workWithFile) {
+        decrementCamouflage(workWithFile);
+    }
+
+    @Override
+    public void takeDamage(int damage, WorkWithFile workWithFile) {
+        if (remainingCamouflage > 0) {
+            logAndPrint(this.name + " уникнув частини атаки завдяки камуфляжу.", workWithFile);
         } else {
-            super.takeDamage(damage);
-            this.adapt(damage);
+            super.takeDamage(damage, workWithFile);
         }
     }
 
@@ -85,7 +74,8 @@ public class ChameleonDroid extends Droid {
                 ", health=" + health +
                 ", damage=" + damage +
                 ", camouflageDuration=" + camouflageDuration +
+                ", remainingCamouflage=" + remainingCamouflage +
+                ", camouflageUsed=" + camouflageUsed +
                 '}';
     }
 }
-

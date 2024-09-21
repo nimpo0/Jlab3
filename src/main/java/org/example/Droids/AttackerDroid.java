@@ -1,5 +1,7 @@
 package org.example.Droids;
 
+import org.example.file.WorkWithFile;
+
 public class AttackerDroid extends Droid {
 
     private int charge;
@@ -16,6 +18,7 @@ public class AttackerDroid extends Droid {
         this.charge = 0;
         this.roundsToCharge = roundsToCharge;
     }
+
     public int getCharge() {
         return charge;
     }
@@ -25,40 +28,39 @@ public class AttackerDroid extends Droid {
     }
 
     @Override
-    public void updateRound() {
-        charge();
+    public void updateRound(WorkWithFile workWithFile) {
+        charge(workWithFile);
     }
 
-    public void charge() {
+    public void charge(WorkWithFile workWithFile) {
         if (charge < roundsToCharge) {
             charge++;
-            System.out.println(this.name + " заряджається. Прогрес заряду: " + charge + "/" + roundsToCharge);
+            logAndPrint(this.name + " заряджається. Прогрес заряду: " + charge + "/" + roundsToCharge, workWithFile);
         } else {
-            System.out.println(this.name + " готовий до сильної атаки!");
+            logAndPrint(this.name + " готовий до сильної атаки!", workWithFile);
         }
     }
 
-    public void strongAttack(Droid target) {
+
+    public void strongAttack(Droid target, WorkWithFile workWithFile) {
         if (charge >= roundsToCharge) {
             int strongDamage = this.damage * 2;
-            System.out.println(this.name + " виконує сильну атаку на " + target.getName() + " і завдає " + strongDamage + " пошкоджень.");
-            target.takeDamage(strongDamage);
+            logAndPrint(this.name + " виконує сильну атаку на " + target.getName() + " і завдає " + strongDamage + " пошкоджень.", workWithFile);
+            target.takeDamage(strongDamage, workWithFile);
             charge = 0;
         } else {
-            System.out.println(this.name + " не готовий до сильної атаки. Потрібно зарядитися ще " + (roundsToCharge - charge) + " раундів.");
+            logAndPrint(this.name + " не готовий до сильної атаки. Потрібно зарядитися ще " + (roundsToCharge - charge) + " раундів.", workWithFile);
         }
     }
 
     @Override
     public String toString() {
-        return "AttackerDroid{" +
-                "name='" + name + '\'' +
-                ", health=" + health +
-                ", damage=" + damage +
-                ", charge=" + charge +
-                ", roundsToCharge=" + roundsToCharge +
+        return "Атакуючий дроїд{" +
+                "ім'я='" + name + '\'' +
+                ", здоров'я=" + health +
+                ", сила=" + damage +
+                ", заряд=" + charge +
+                ", кількість раундів до повного заряду=" + roundsToCharge +
                 '}';
     }
-
 }
-

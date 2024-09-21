@@ -1,5 +1,7 @@
 package org.example.Droids;
 
+import org.example.file.WorkWithFile;
+
 import java.util.Random;
 
 public class FreezerDroid extends Droid {
@@ -25,13 +27,20 @@ public class FreezerDroid extends Droid {
     }
 
     @Override
-    public void attack(Droid enemy) {
-        System.out.println(this.name + " атакує " + enemy.getName() + " і завдає " + this.damage + " пошкоджень.");
-        enemy.takeDamage(this.damage);
+    public void updateRound(WorkWithFile workWithFile) {
+
+    }
+
+    @Override
+    public void attack(Droid enemy, WorkWithFile workWithFile) {
+        String attackMessage = this.name + " атакує " + enemy.getName() + " і завдає " + this.damage + " пошкоджень.";
+        logAndPrint(attackMessage, workWithFile);
+        enemy.takeDamage(this.damage, workWithFile);
 
         if (canFreeze()) {
-            System.out.println(this.name + " заморозив " + enemy.getName() + "!");
-            enemy.freeze();
+            String freezeMessage = this.name + " заморозив " + enemy.getName() + "!";
+            logAndPrint(freezeMessage, workWithFile);
+            enemy.freeze(workWithFile);
         }
     }
 

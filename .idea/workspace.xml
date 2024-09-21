@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ab7b37f-edf0-4525-95c9-a54d06da7a1f" name="Changes" comment="Додала меню">
+    <list default="true" id="3ab7b37f-edf0-4525-95c9-a54d06da7a1f" name="Changes" comment="Змінила клас Battle для коректної роботи похідних класів AttackerDroid та ChameleonDroid&#10;Також оновила ці похідні класи">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/file/WorkWithFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Battles/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Battles/Battle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Droids/AttackerDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/AttackerDroid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Droids/BomberDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/BomberDroid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Droids/ChameleonDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/ChameleonDroid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Droids/Droid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/Droid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Droids/FreezerDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/FreezerDroid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Droids/HealerDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/HealerDroid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Menu/DroidFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Menu/DroidFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Menu/Menu.java" afterDir="false" />
     </list>
@@ -120,13 +124,22 @@
       <option name="project" value="LOCAL" />
       <updated>1726775351719</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Змінила клас Battle для коректної роботи похідних класів AttackerDroid та ChameleonDroid&#10;Також оновила ці похідні класи">
+      <option name="closed" value="true" />
+      <created>1726848792135</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1726848792137</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
     <MESSAGE value="Зробила базовий клас Droid і додала похідні до нього класи" />
     <MESSAGE value="Додала меню" />
-    <option name="LAST_COMMIT_MESSAGE" value="Додала меню" />
+    <MESSAGE value="Змінила клас Battle для коректної роботи похідних класів AttackerDroid та ChameleonDroid&#10;Також оновила ці похідні класи" />
+    <option name="LAST_COMMIT_MESSAGE" value="Змінила клас Battle для коректної роботи похідних класів AttackerDroid та ChameleonDroid&#10;Також оновила ці похідні класи" />
   </component>
 </project>

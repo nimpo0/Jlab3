@@ -1,5 +1,7 @@
 package org.example.Droids;
 
+import org.example.file.WorkWithFile;
+
 public abstract class Droid {
 
     protected String name;
@@ -47,33 +49,36 @@ public abstract class Droid {
         return isFrozen;
     }
 
-    public void freeze() {
+    protected void logAndPrint(String message, WorkWithFile workWithFile) {
+        System.out.println(message);
+        workWithFile.addAction(message);
+    }
+
+    public void freeze(WorkWithFile workWithFile) {
         this.isFrozen = true;
-        System.out.println(this.name + " заморожений і не може діяти в цьому раунді!");
+        logAndPrint(this.name + " заморожений і не може діяти в цьому раунді!", workWithFile);
     }
 
-    public void unfreeze() {
+    public void unfreeze(WorkWithFile workWithFile) {
         this.isFrozen = false;
-        System.out.println(this.name + " розморозився і може знову діяти.");
+        logAndPrint(this.name + " розморозився і може знову діяти.", workWithFile);
     }
 
-    public void updateRound(){
+    public abstract void updateRound(WorkWithFile workWithFile);
 
-    }
-
-    public void takeDamage(int damage) {
+    public void takeDamage(int damage, WorkWithFile workWithFile) {
         this.setHealth(this.health - damage);
-        System.out.println(this.name + " отримав " + damage + " пошкоджень. Залишилось здоров'я: " + this.health);
+        logAndPrint(this.name + " отримав " + damage + " пошкоджень. Залишилось здоров'я: " + this.health, workWithFile);
     }
 
-    public void attack(Droid enemy) {
+    public void attack(Droid enemy, WorkWithFile workWithFile) {
         if (this.isFrozen) {
-            System.out.println(this.name + " не може атакувати, оскільки заморожений!");
+            logAndPrint(this.name + " не може атакувати, оскільки заморожений!", workWithFile);
             return;
         }
 
-        System.out.println(this.name + " атакує " + enemy.getName() + " і завдає " + this.damage + " пошкоджень.");
-        enemy.takeDamage(this.damage);
+        logAndPrint(this.name + " атакує " + enemy.getName() + " і завдає " + this.damage + " пошкоджень.", workWithFile);
+        enemy.takeDamage(this.damage, workWithFile);
     }
 
     @Override
@@ -86,4 +91,3 @@ public abstract class Droid {
                 '}';
     }
 }
-

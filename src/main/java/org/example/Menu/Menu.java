@@ -2,7 +2,9 @@ package org.example.Menu;
 
 import org.example.Droids.Droid;
 import org.example.Battles.Battle;
+import org.example.file.WorkWithFile;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -10,6 +12,7 @@ import java.util.Scanner;
 public class Menu {
     private List<Droid> droids = new ArrayList<>();
     private Scanner scanner = new Scanner(System.in);
+    private WorkWithFile workWithFile = new WorkWithFile();
 
     public void showMenu() {
         while (true) {
@@ -39,10 +42,10 @@ public class Menu {
                     teamBattle();
                     break;
                 case 5:
-                    System.out.println("поки що без коду");
+                    saveBattleLog();
                     break;
                 case 6:
-                    System.out.println("поки що без коду2");
+                    loadBattleLog();
                     break;
                 case 7:
                     System.out.println("Вихід з програми.");
@@ -87,12 +90,12 @@ public class Menu {
         int index2 = scanner.nextInt() - 1;
 
         if (index1 >= 0 && index1 < droids.size() && index2 >= 0 && index2 < droids.size() && index1 != index2) {
-            Battle.oneOnOne(droids.get(index1), droids.get(index2));
+            workWithFile = new WorkWithFile();
+            Battle.oneOnOne(droids.get(index1), droids.get(index2), workWithFile);
         } else {
             System.out.println("Невірний вибір дроїдів. Перевірте, чи обидва дроїди різні і чи їх номери вірні.");
         }
     }
-
 
     private void teamBattle() {
         if (droids.size() < 6) {
@@ -126,6 +129,28 @@ public class Menu {
             }
         }
 
-        Battle.teamBattle(team1, team2);
+        workWithFile = new WorkWithFile();
+        Battle.teamBattle(team1, team2, workWithFile);
+    }
+
+    private void saveBattleLog() {
+        try {
+            workWithFile.saveToFile();
+            System.out.println("Бій збережено у файл.");
+        } catch (IOException e) {
+            System.out.println("Помилка під час збереження бою.");
+        }
+    }
+
+    private void loadBattleLog() {
+        try {
+            List<String> actions = workWithFile.loadFromFile();
+            System.out.println("Завантажено бій з файлу:");
+            for (String action : actions) {
+                System.out.println(action);
+            }
+        } catch (IOException e) {
+            System.out.println("Помилка під час завантаження бою.");
+        }
     }
 }

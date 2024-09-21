@@ -54,14 +54,21 @@ public class DroidFactory {
                 break;
 
             case 2:
-                int bombDamage;
+                int strongDamage;
                 while (true) {
-                    System.out.print("Введіть шкоду від бомби (1-50): ");
-                    bombDamage = scanner.nextInt();
-                    if (bombDamage >= 1 && bombDamage <= 50) break;
+                    System.out.print("Введіть силу сильної атаки (1-50): ");
+                    strongDamage = scanner.nextInt();
+                    if (strongDamage >= 1 && strongDamage <= 50) break;
                     System.out.println("Значення має бути в діапазоні 1-50.");
                 }
-                newDroid = new BomberDroid(name, health, damage, bombDamage);
+                double hitChance;
+                while (true) {
+                    System.out.print("Введіть ймовірність попадання (0.0-1.0): ");
+                    hitChance = scanner.nextDouble();
+                    if (hitChance >= 0.0 && hitChance <= 1.0) break;
+                    System.out.println("Значення має бути в діапазоні 0.0-1.0.");
+                }
+                newDroid = new BomberDroid(name, health, damage, strongDamage, hitChance);
                 break;
 
             case 3:

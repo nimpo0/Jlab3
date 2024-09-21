@@ -1,5 +1,7 @@
 package org.example.Droids;
 
+import org.example.file.WorkWithFile;
+
 public class HealerDroid extends Droid {
 
     private int healing;
@@ -22,21 +24,29 @@ public class HealerDroid extends Droid {
         this.healing = healing;
     }
 
-    public void heal() {
-        setHealth(this.health + healing);
-        System.out.println(this.name + " зцілив себе на " + healing + " одиниць. Здоров'я тепер: " + this.health);
+    @Override
+    public void updateRound(WorkWithFile workWithFile) {
+
     }
 
-    public void heal(Droid droid) {
+    public void heal(WorkWithFile workWithFile) {
+        setHealth(this.health + healing);
+        String healMessage = this.name + " зцілив себе на " + healing + " одиниць. Здоров'я тепер: " + this.health;
+        logAndPrint(healMessage, workWithFile);
+    }
+
+    public void heal(Droid droid, WorkWithFile workWithFile) {
         droid.setHealth(droid.getHealth() + healing);
-        System.out.println(this.name + " зцілив " + droid.getName() + " на " + healing + " одиниць. Здоров'я " + droid.getName() + ": " + droid.getHealth());
+        String healMessage = this.name + " зцілив " + droid.getName() + " на " + healing + " одиниць. Здоров'я " + droid.getName() + ": " + droid.getHealth();
+        logAndPrint(healMessage, workWithFile);
     }
 
     @Override
-    public void attack(Droid enemy) {
-        System.out.println(this.name + " атакує " + enemy.getName() + " і завдає " + this.damage + " пошкоджень.");
-        enemy.takeDamage(this.damage);
-        this.heal();
+    public void attack(Droid enemy, WorkWithFile workWithFile) {
+        String attackMessage = this.name + " атакує " + enemy.getName() + " і завдає " + this.damage + " пошкоджень.";
+        logAndPrint(attackMessage, workWithFile);
+        enemy.takeDamage(this.damage, workWithFile);
+        heal(workWithFile);
     }
 
     @Override
