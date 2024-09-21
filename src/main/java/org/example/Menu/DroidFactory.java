@@ -112,7 +112,7 @@ public class DroidFactory {
                 break;
 
             default:
-                System.out.println("Невірний тип дроїда.");
+                System.out.println("Неправильний тип дроїда.");
                 break;
         }
 

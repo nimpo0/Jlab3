@@ -38,13 +38,13 @@ public class BomberDroid extends Droid {
 
     public void bombAttack(Droid target, WorkWithFile workWithFile) {
         if (this.isFrozen) {
-            logAndPrint(this.name + " не може здійснити сильну атаку, оскільки заморожений!", workWithFile);
+            logAndPrint(this.name + " не може кинути сильну бомбу, оскільки заморожений!", workWithFile);
             return;
         }
 
         Random random = new Random();
         if (random.nextDouble() <= hitChance) {
-            logAndPrint(this.name + " завдає сильний удар по " + target.getName() + " і завдає " + strongDamage + " пошкоджень!", workWithFile);
+            logAndPrint(this.name + " кидає сильну бомбу по " + target.getName() + " і завдає " + strongDamage + " пошкоджень!", workWithFile);
             target.takeDamage(strongDamage, workWithFile);
         } else {
             logAndPrint(this.name + " промахнувся!", workWithFile);

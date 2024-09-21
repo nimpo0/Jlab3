@@ -52,7 +52,7 @@ public class Menu {
                     System.out.println("Вихід з програми.");
                     return;
                 default:
-                    System.out.println("Невірний вибір, спробуйте ще раз.");
+                    System.out.println("Неправильний вибір, спробуйте ще раз.");
             }
         }
     }
@@ -94,7 +94,7 @@ public class Menu {
             workWithFile = new WorkWithFile();
             Battle.oneOnOne(droids.get(index1), droids.get(index2), workWithFile);
         } else {
-            System.out.println("Невірний вибір дроїдів. Перевірте, чи обидва дроїди різні і чи їх номери вірні.");
+            System.out.println("Неправильний вибір дроїдів.");
         }
     }
 
@@ -113,7 +113,7 @@ public class Menu {
             if (index >= 0 && index < droids.size() && !team1.contains(droids.get(index))) {
                 team1.add(droids.get(index));
             } else {
-                System.out.println("Невірний вибір дроїда або дроїд вже був вибраний.");
+                System.out.println("Неправильний вибір дроїда.");
                 return;
             }
         }
@@ -125,7 +125,7 @@ public class Menu {
             if (index >= 0 && index < droids.size() && !team1.contains(droids.get(index)) && !team2.contains(droids.get(index))) {
                 team2.add(droids.get(index));
             } else {
-                System.out.println("Невірний вибір дроїда або дроїд вже був вибраний.");
+                System.out.println("Неправильний вибір дроїда.");
                 return;
             }
         }

@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ab7b37f-edf0-4525-95c9-a54d06da7a1f" name="Changes" comment="Змінила логіку у класі BomberDroid&#10;Покращила логіку у класі ChameleonDroid&#10;Доробила клас Menu&#10;Додала клас для роботи з файлом WorkWithFile, використала його в багатьох класах для коректного запису всього бою у файл">
+    <list default="true" id="3ab7b37f-edf0-4525-95c9-a54d06da7a1f" name="Changes" comment="Покращила вивід інформації">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Battles/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Battles/Battle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Droids/AttackerDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/AttackerDroid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Droids/BomberDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/BomberDroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Droids/ChameleonDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/ChameleonDroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Droids/Droid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/Droid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Droids/FreezerDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/FreezerDroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Droids/HealerDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/HealerDroid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Menu/DroidFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Menu/DroidFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Menu/Menu.java" afterDir="false" />
     </list>
@@ -139,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726933371709</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Покращила вивід інформації">
+      <option name="closed" value="true" />
+      <created>1726936413093</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1726936413093</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -148,6 +150,7 @@
     <MESSAGE value="Додала меню" />
     <MESSAGE value="Змінила клас Battle для коректної роботи похідних класів AttackerDroid та ChameleonDroid&#10;Також оновила ці похідні класи" />
     <MESSAGE value="Змінила логіку у класі BomberDroid&#10;Покращила логіку у класі ChameleonDroid&#10;Доробила клас Menu&#10;Додала клас для роботи з файлом WorkWithFile, використала його в багатьох класах для коректного запису всього бою у файл" />
-    <option name="LAST_COMMIT_MESSAGE" value="Змінила логіку у класі BomberDroid&#10;Покращила логіку у класі ChameleonDroid&#10;Доробила клас Menu&#10;Додала клас для роботи з файлом WorkWithFile, використала його в багатьох класах для коректного запису всього бою у файл" />
+    <MESSAGE value="Покращила вивід інформації" />
+    <option name="LAST_COMMIT_MESSAGE" value="Покращила вивід інформації" />
   </component>
 </project>

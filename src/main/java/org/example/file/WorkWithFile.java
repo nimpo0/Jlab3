@@ -19,21 +19,29 @@ public class WorkWithFile {
         strings.add(action);
     }
 
-    public void saveToFile() throws IOException {
-        FileWriter writer = new FileWriter(FILE_NAME);
-        for (String action : strings) {
-            writer.write(action + "\n");
+    public void saveToFile() {
+        try (FileWriter writer = new FileWriter(FILE_NAME)) {
+            for (String action : strings) {
+                writer.write(action + "\n");
+            }
+        } catch (IOException e) {
+            System.err.println("Помилка при збереженні у файл: " + e.getMessage());
         }
-        writer.close();
     }
 
-    public List<String> loadFromFile() throws IOException {
-        List<String> fileContent = Files.readAllLines(Paths.get(FILE_NAME));
-        strings = new ArrayList<>(fileContent);
-        return fileContent;
+    public List<String> loadFromFile() {
+        try {
+            List<String> fileContent = Files.readAllLines(Paths.get(FILE_NAME));
+            strings = new ArrayList<>(fileContent);
+            return fileContent;
+        } catch (IOException e) {
+            System.err.println("Помилка при завантаженні з файлу: " + e.getMessage());
+            return new ArrayList<>();
+        }
     }
 
     public List<String> getStrings() {
         return strings;
     }
 }
+
