@@ -49,19 +49,14 @@ public abstract class Droid {
         return isFrozen;
     }
 
-    protected void logAndPrint(String message, WorkWithFile workWithFile) {
-        System.out.println(message);
-        workWithFile.addAction(message);
+    protected void logAndPrint(String mes, WorkWithFile workWithFile) {
+        System.out.println(mes);
+        workWithFile.addAction(mes);
     }
 
     public void freeze(WorkWithFile workWithFile) {
         this.isFrozen = true;
         logAndPrint(this.name + " заморожений і не може діяти в цьому раунді!", workWithFile);
-    }
-
-    public void unfreeze(WorkWithFile workWithFile) {
-        this.isFrozen = false;
-        logAndPrint(this.name + " розморозився і може знову діяти.", workWithFile);
     }
 
     public abstract void updateRound(WorkWithFile workWithFile);
@@ -83,11 +78,11 @@ public abstract class Droid {
 
     @Override
     public String toString() {
-        return "Droid{" +
-                "name='" + name + '\'' +
-                ", health=" + health +
-                ", damage=" + damage +
-                ", isFrozen=" + isFrozen +
-                '}';
+        return "\tДроїд{" +
+                "ім'я='" + name + '\'' +
+                ", здоров'я=" + health +
+                ", сила=" + damage +
+                ", чи заморожений=" + isFrozen +
+                ')';
     }
 }

@@ -69,13 +69,11 @@ public class ChameleonDroid extends Droid {
 
     @Override
     public String toString() {
-        return "ChameleonDroid{" +
-                "name='" + name + '\'' +
-                ", health=" + health +
-                ", damage=" + damage +
-                ", camouflageDuration=" + camouflageDuration +
-                ", remainingCamouflage=" + remainingCamouflage +
-                ", camouflageUsed=" + camouflageUsed +
-                '}';
+        return "\tХамелеон (" +
+                "ім'я='" + name + '\'' +
+                ", здоров'я=" + health +
+                ", сила=" + damage +
+                ", кількість камуфляжу=" + camouflageDuration +
+                ')';
     }
 }

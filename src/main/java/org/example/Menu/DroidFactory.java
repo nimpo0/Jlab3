@@ -12,19 +12,20 @@ public class DroidFactory {
         Scanner scanner = new Scanner(System.in);
         String name;
 
+        System.out.println("\n\t\tОберіть тип дроїда:");
+        System.out.println("\t1. Атакуючий дроїд");
+        System.out.println("\t2. Бомбардувальник");
+        System.out.println("\t3. Хамелеон");
+        System.out.println("\t4. Заморожувавач");
+        System.out.println("\t5. Дроїд відновлювач");
+
+        int droidType = scanner.nextInt();
+        scanner.nextLine();
+
         System.out.println("Введіть ім'я дроїда:");
         name = scanner.nextLine();
 
-        System.out.println("Оберіть тип дроїда:");
-        System.out.println("1. AttackerDroid");
-        System.out.println("2. BomberDroid");
-        System.out.println("3. ChameleonDroid");
-        System.out.println("4. FreezerDroid");
-        System.out.println("5. HealerDroid");
-
-        int droidType = scanner.nextInt();
         int health, damage;
-
         while (true) {
             System.out.print("Введіть здоров'я дроїда (1-100): ");
             health = scanner.nextInt();
@@ -117,7 +118,7 @@ public class DroidFactory {
 
         if (newDroid != null) {
             droids.add(newDroid);
-            System.out.println("Дроїд " + name + " успішно створений!");
+            System.out.println("\n\t\tДроїд " + name + " успішно створений!");
         }
 
         return newDroid;

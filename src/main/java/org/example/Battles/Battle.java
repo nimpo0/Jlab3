@@ -11,14 +11,14 @@ import java.util.List;
 public class Battle {
 
     public static void oneOnOne(Droid droid1, Droid droid2, WorkWithFile workWithFile) {
-        String battleInfo = "Бій 1 на 1: " + droid1.getName() + " проти " + droid2.getName();
+        String battleInfo = "\n\t\t~~~~~Бій 1 на 1~~~~~ " + droid1.getName() + " проти " + droid2.getName();
         printAndLogResult(battleInfo, workWithFile);
 
         int roundCounter = 0;
 
         while (droid1.getHealth() > 0 && droid2.getHealth() > 0) {
             roundCounter++;
-            String roundInfo = "Раунд " + roundCounter;
+            String roundInfo = "\n\tРаунд " + roundCounter;
             printAndLogResult(roundInfo, workWithFile);
 
             performAction(droid1, droid2, workWithFile);
@@ -35,14 +35,14 @@ public class Battle {
     }
 
     public static void teamBattle(List<Droid> team1, List<Droid> team2, WorkWithFile workWithFile) {
-        String battleInfo = "Командний бій: Команда 1 проти Команди 2";
+        String battleInfo = "\n\t\t~~~~~Командний бій~~~~~";
         printAndLogResult(battleInfo, workWithFile);
 
         int roundCounter = 0;
 
         while (hasAliveDroids(team1) && hasAliveDroids(team2)) {
             roundCounter++;
-            String roundInfo = "Раунд " + roundCounter;
+            String roundInfo = "\n\tРаунд " + roundCounter;
             printAndLogResult(roundInfo, workWithFile);
 
             for (Droid droid1 : team1) {
@@ -65,9 +65,9 @@ public class Battle {
         }
 
         if (hasAliveDroids(team1)) {
-            printAndLogResult("Команда 1 перемогла!", workWithFile);
+            printAndLogResult("\n\tКоманда 1 перемогла!", workWithFile);
         } else {
-            printAndLogResult("Команда 2 перемогла!", workWithFile);
+            printAndLogResult("\n\tКоманда 2 перемогла!", workWithFile);
         }
     }
 
@@ -92,7 +92,7 @@ public class Battle {
             chameleon.updateRound(workWithFile);
         } else if (droid instanceof BomberDroid bomber) {
             if (bomber.shouldUseStrongAttack()) {
-                bomber.strongAttack(enemy, workWithFile);
+                bomber.bombAttack(enemy, workWithFile);
                 bomber.resetRoundCounter();
             } else {
                 bomber.attack(enemy, workWithFile);

@@ -51,11 +51,11 @@ public class HealerDroid extends Droid {
 
     @Override
     public String toString() {
-        return "HealerDroid{" +
-                "name='" + name + '\'' +
-                ", health=" + health +
-                ", damage=" + damage +
-                ", healing=" + healing +
-                '}';
+        return "\tДроїд відновлювач (" +
+                "ім'я='" + name + '\'' +
+                ", здоров'я=" + health +
+                ", сила=" + damage +
+                ", відновлення=" + healing +
+                ')';
     }
 }

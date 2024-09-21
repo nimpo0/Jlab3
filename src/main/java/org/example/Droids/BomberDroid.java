@@ -36,7 +36,7 @@ public class BomberDroid extends Droid {
         this.hitChance = hitChance;
     }
 
-    public void strongAttack(Droid target, WorkWithFile workWithFile) {
+    public void bombAttack(Droid target, WorkWithFile workWithFile) {
         if (this.isFrozen) {
             logAndPrint(this.name + " не може здійснити сильну атаку, оскільки заморожений!", workWithFile);
             return;
@@ -66,12 +66,12 @@ public class BomberDroid extends Droid {
 
     @Override
     public String toString() {
-        return "BomberDroid{" +
-                "name='" + name + '\'' +
-                ", health=" + health +
-                ", damage=" + damage +
-                ", strongDamage=" + strongDamage +
-                ", hitChance=" + hitChance +
-                '}';
+        return "\tБомбардувальник (" +
+                "ім'я='" + name + '\'' +
+                ", здоров'я=" + health +
+                ", сила=" + damage +
+                ", сильна атака=" + strongDamage +
+                ", шанс сильної атаки=" + hitChance +
+                ')';
     }
 }

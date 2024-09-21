@@ -16,13 +16,14 @@ public class Menu {
 
     public void showMenu() {
         while (true) {
-            System.out.println("1. Створити дроїда");
-            System.out.println("2. Показати список створених дроїдів");
-            System.out.println("3. Запустити бій 1 на 1");
-            System.out.println("4. Запустити бій команда на команду");
-            System.out.println("5. Записати проведений бій у файл");
-            System.out.println("6. Відтворити проведений бій зі збереженого файлу");
-            System.out.println("7. Вийти з програми");
+            System.out.println("\n\t\t\tМеню");
+            System.out.println("\t\t1. Створити дроїда");
+            System.out.println("\t\t2. Показати список створених дроїдів");
+            System.out.println("\t\t3. Запустити бій 1 на 1");
+            System.out.println("\t\t4. Запустити бій команда на команду");
+            System.out.println("\t\t5. Записати проведений бій у файл");
+            System.out.println("\t\t6. Відтворити проведений бій зі збереженого файлу");
+            System.out.println("\t\t7. Вийти з програми");
             System.out.print("Виберіть опцію: ");
 
             int option = scanner.nextInt();
@@ -68,7 +69,7 @@ public class Menu {
         if (droids.isEmpty()) {
             System.out.println("Список дроїдів порожній.");
         } else {
-            System.out.println("Список створених дроїдів:");
+            System.out.println("\n\t\t~~~~~Список створених дроїдів~~~~~");
             for (Droid droid : droids) {
                 System.out.println(droid);
             }

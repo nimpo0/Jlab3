@@ -28,7 +28,6 @@ public class FreezerDroid extends Droid {
 
     @Override
     public void updateRound(WorkWithFile workWithFile) {
-
     }
 
     @Override
@@ -51,11 +50,11 @@ public class FreezerDroid extends Droid {
 
     @Override
     public String toString() {
-        return "FreezerDroid{" +
-                "name='" + name + '\'' +
-                ", health=" + health +
-                ", damage=" + damage +
-                ", freezeChance=" + (freezeChance * 100) + "%" +
-                '}';
+        return "\tЗаморожувавач (" +
+                "ім'я='" + name + '\'' +
+                ", здоров'я=" + health +
+                ", сила=" + damage +
+                ", шанс заморожування=" + (freezeChance * 100) + "%" +
+                ')';
     }
 }

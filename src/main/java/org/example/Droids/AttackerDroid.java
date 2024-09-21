@@ -55,12 +55,12 @@ public class AttackerDroid extends Droid {
 
     @Override
     public String toString() {
-        return "Атакуючий дроїд{" +
+        return "\tАтакуючий дроїд (" +
                 "ім'я='" + name + '\'' +
                 ", здоров'я=" + health +
                 ", сила=" + damage +
                 ", заряд=" + charge +
                 ", кількість раундів до повного заряду=" + roundsToCharge +
-                '}';
+                ')';
     }
 }

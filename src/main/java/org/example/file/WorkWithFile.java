@@ -8,20 +8,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WorkWithFile {
-    private List<String> actions;
+    private List<String> strings;
     private static final String FILE_NAME = "battle_log.txt";
 
     public WorkWithFile() {
-        actions = new ArrayList<>();
+        strings = new ArrayList<>();
     }
 
     public void addAction(String action) {
-        actions.add(action);
+        strings.add(action);
     }
 
     public void saveToFile() throws IOException {
         FileWriter writer = new FileWriter(FILE_NAME);
-        for (String action : actions) {
+        for (String action : strings) {
             writer.write(action + "\n");
         }
         writer.close();
@@ -29,11 +29,11 @@ public class WorkWithFile {
 
     public List<String> loadFromFile() throws IOException {
         List<String> fileContent = Files.readAllLines(Paths.get(FILE_NAME));
-        actions = new ArrayList<>(fileContent);
+        strings = new ArrayList<>(fileContent);
         return fileContent;
     }
 
-    public List<String> getActions() {
-        return actions;
+    public List<String> getStrings() {
+        return strings;
     }
 }
