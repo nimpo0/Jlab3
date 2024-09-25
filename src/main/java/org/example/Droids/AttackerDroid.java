@@ -30,6 +30,7 @@ public class AttackerDroid extends Droid {
     @Override
     public void updateRound(WorkWithFile workWithFile) {
         charge(workWithFile);
+        unfreeze(workWithFile);
     }
 
     public void charge(WorkWithFile workWithFile) {
@@ -40,7 +41,6 @@ public class AttackerDroid extends Droid {
             logAndPrint(this.name + " готовий до сильної атаки!", workWithFile);
         }
     }
-
 
     public void strongAttack(Droid target, WorkWithFile workWithFile) {
         if (charge >= roundsToCharge) {

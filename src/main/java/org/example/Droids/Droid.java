@@ -31,14 +31,6 @@ public abstract class Droid {
         return health;
     }
 
-    public int getDamage() {
-        return damage;
-    }
-
-    public int getMaxHealth() {
-        return maxHealth;
-    }
-
     public void setHealth(int health) {
         if (health > maxHealth) {
             this.health = maxHealth;
@@ -61,6 +53,13 @@ public abstract class Droid {
     public void freeze(WorkWithFile workWithFile) {
         this.isFrozen = true;
         logAndPrint(this.name + " заморожений і не може діяти в цьому раунді!", workWithFile);
+    }
+
+    public void unfreeze(WorkWithFile workWithFile) {
+        if (this.isFrozen) {
+            this.isFrozen = false;
+            logAndPrint(this.name + " розморожений і може діяти в наступному раунді!", workWithFile);
+        }
     }
 
     public abstract void updateRound(WorkWithFile workWithFile);

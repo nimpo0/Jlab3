@@ -80,12 +80,6 @@ public class DroidFactory {
                     if (camouflageDuration >= 1 && camouflageDuration <= 3) break;
                     System.out.println("Значення має бути в діапазоні 1-3.");
                 }
-                while (true) {
-                    System.out.print("Введіть ушкодження контратаки (1-15): ");
-                    counterAttackDamage = scanner.nextInt();
-                    if (counterAttackDamage >= 1 && counterAttackDamage <= 15) break;
-                    System.out.println("Значення має бути в діапазоні 1-15.");
-                }
                 newDroid = new ChameleonDroid(name, health, damage, camouflageDuration);
                 break;
 

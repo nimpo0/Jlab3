@@ -25,6 +25,7 @@ public class HealerDroid extends Droid {
     @Override
     public void updateRound(WorkWithFile workWithFile) {
         roundsSinceLastHeal++;
+        unfreeze(workWithFile);
     }
 
     public boolean canHeal() {

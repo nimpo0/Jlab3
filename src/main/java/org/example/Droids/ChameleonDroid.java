@@ -53,9 +53,9 @@ public class ChameleonDroid extends Droid {
     }
 
     public void decrementCamouflage(WorkWithFile workWithFile) {
-        if (this.remainingCamouflage > 0) {
+        if (this.remainingCamouflage >= 0) {
             this.remainingCamouflage--;
-            logAndPrint(this.name + " має камуфляж ще на " + this.remainingCamouflage + " раундів.", workWithFile);
+            logAndPrint(this.name + " має камуфляж ще на " + this.remainingCamouflage +  " раундів.", workWithFile);
             if (this.remainingCamouflage == 0) {
                 logAndPrint(this.name + " втрачає камуфляж.", workWithFile);
             }
@@ -65,12 +65,13 @@ public class ChameleonDroid extends Droid {
     @Override
     public void updateRound(WorkWithFile workWithFile) {
         decrementCamouflage(workWithFile);
+        unfreeze(workWithFile);
     }
 
     @Override
     public void takeDamage(int damage, WorkWithFile workWithFile) {
-        if (remainingCamouflage > 0) {
-            logAndPrint(this.name + " уникнув частини атаки завдяки камуфляжу.", workWithFile);
+        if (remainingCamouflage >= 0) {
+            logAndPrint(this.name + " уникнув атаки завдяки камуфляжу.", workWithFile);
         } else {
             super.takeDamage(damage, workWithFile);
             adapt(damage, workWithFile);
@@ -84,7 +85,6 @@ public class ChameleonDroid extends Droid {
                 ", здоров'я=" + health +
                 ", сила=" + damage +
                 ", кількість камуфляжу=" + camouflageDuration +
-                ", адаптація=" + (isAdapted ? "активна" : "неактивна") +
                 ')';
     }
 }

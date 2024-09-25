@@ -42,6 +42,7 @@ public class BomberDroid extends Droid {
     @Override
     public void updateRound(WorkWithFile workWithFile) {
         roundCounter++;
+        unfreeze(workWithFile);
     }
 
     public boolean shouldUseStrongAttack() {
