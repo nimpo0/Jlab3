@@ -3,6 +3,7 @@ package org.example.Battles;
 import org.example.Droids.AttackerDroid;
 import org.example.Droids.ChameleonDroid;
 import org.example.Droids.BomberDroid;
+import org.example.Droids.HealerDroid;
 import org.example.Droids.Droid;
 import org.example.file.WorkWithFile;
 
@@ -98,6 +99,13 @@ public class Battle {
                 bomber.attack(enemy, workWithFile);
             }
             bomber.updateRound(workWithFile);
+        } else if (droid instanceof HealerDroid healer) {
+            if (healer.canHeal()) {
+                healer.heal(workWithFile);
+            } else {
+                healer.attack(enemy, workWithFile);
+            }
+            healer.updateRound(workWithFile);
         } else {
             droid.attack(enemy, workWithFile);
         }

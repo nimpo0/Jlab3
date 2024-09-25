@@ -135,23 +135,15 @@ public class Menu {
     }
 
     private void saveBattleLog() {
-        try {
-            workWithFile.saveToFile();
-            System.out.println("Бій збережено у файл.");
-        } catch (IOException e) {
-            System.out.println("Помилка під час збереження бою.");
-        }
+        workWithFile.saveToFile();
+        System.out.println("Бій збережено у файл.");
     }
 
     private void loadBattleLog() {
-        try {
-            List<String> actions = workWithFile.loadFromFile();
-            System.out.println("Завантажено бій з файлу:");
-            for (String action : actions) {
-                System.out.println(action);
-            }
-        } catch (IOException e) {
-            System.out.println("Помилка під час завантаження бою.");
+        List<String> actions = workWithFile.loadFromFile();
+        System.out.println("Завантажено бій з файлу:");
+        for (String action : actions) {
+            System.out.println(action);
         }
     }
 }

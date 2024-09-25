@@ -18,14 +18,6 @@ public class FreezerDroid extends Droid {
         this.freezeChance = freezeChance;
     }
 
-    public double getFreezeChance() {
-        return freezeChance;
-    }
-
-    public void setFreezeChance(double freezeChance) {
-        this.freezeChance = freezeChance;
-    }
-
     @Override
     public void updateRound(WorkWithFile workWithFile) {
     }

@@ -24,18 +24,6 @@ public class BomberDroid extends Droid {
         this.roundCounter = 0;
     }
 
-    public int getStrongDamage() {
-        return strongDamage;
-    }
-
-    public double getHitChance() {
-        return hitChance;
-    }
-
-    public void setHitChance(double hitChance) {
-        this.hitChance = hitChance;
-    }
-
     public void bombAttack(Droid target, WorkWithFile workWithFile) {
         if (this.isFrozen) {
             logAndPrint(this.name + " не може кинути сильну бомбу, оскільки заморожений!", workWithFile);

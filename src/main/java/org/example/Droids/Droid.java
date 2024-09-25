@@ -35,6 +35,10 @@ public abstract class Droid {
         return damage;
     }
 
+    public int getMaxHealth() {
+        return maxHealth;
+    }
+
     public void setHealth(int health) {
         if (health > maxHealth) {
             this.health = maxHealth;
