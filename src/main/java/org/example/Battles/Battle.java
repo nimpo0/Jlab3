@@ -1,9 +1,5 @@
 package org.example.Battles;
 
-import org.example.Droids.AttackerDroid;
-import org.example.Droids.ChameleonDroid;
-import org.example.Droids.BomberDroid;
-import org.example.Droids.HealerDroid;
 import org.example.Droids.Droid;
 import org.example.file.WorkWithFile;
 
@@ -78,37 +74,7 @@ public class Battle {
     }
 
     private static void performAction(Droid droid, Droid enemy, WorkWithFile workWithFile) {
-        if (droid instanceof AttackerDroid attacker) {
-            if (attacker.getCharge() < attacker.getRoundsToCharge()) {
-                attacker.attack(enemy, workWithFile);
-                attacker.updateRound(workWithFile);
-            } else {
-                attacker.strongAttack(enemy, workWithFile);
-            }
-        } else if (droid instanceof ChameleonDroid chameleon) {
-            if (chameleon.getRemainingCamouflage() == 0) {
-                chameleon.activateCamouflage(workWithFile);
-            }
-            chameleon.attack(enemy, workWithFile);
-            chameleon.updateRound(workWithFile);
-        } else if (droid instanceof BomberDroid bomber) {
-            if (bomber.shouldUseStrongAttack()) {
-                bomber.bombAttack(enemy, workWithFile);
-                bomber.resetRoundCounter();
-            } else {
-                bomber.attack(enemy, workWithFile);
-            }
-            bomber.updateRound(workWithFile);
-        } else if (droid instanceof HealerDroid healer) {
-            if (healer.canHeal()) {
-                healer.heal(workWithFile);
-            } else {
-                healer.attack(enemy, workWithFile);
-            }
-            healer.updateRound(workWithFile);
-        } else {
-            droid.attack(enemy, workWithFile);
-        }
+        droid.performAction(enemy, workWithFile);
     }
 
     private static boolean hasAliveDroids(List<Droid> team) {

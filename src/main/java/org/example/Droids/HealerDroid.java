@@ -28,6 +28,16 @@ public class HealerDroid extends Droid {
         unfreeze(workWithFile);
     }
 
+    @Override
+    public void performAction(Droid enemy, WorkWithFile workWithFile) {
+        if (canHeal()) {
+            heal(workWithFile);
+        } else {
+            attack(enemy, workWithFile);
+        }
+        updateRound(workWithFile);
+    }
+
     public boolean canHeal() {
         return roundsSinceLastHeal >= healCount;
     }

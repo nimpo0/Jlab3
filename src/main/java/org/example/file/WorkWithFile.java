@@ -39,9 +39,5 @@ public class WorkWithFile {
             return new ArrayList<>();
         }
     }
-
-    public List<String> getStrings() {
-        return strings;
-    }
 }
 

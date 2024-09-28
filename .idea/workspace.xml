@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ab7b37f-edf0-4525-95c9-a54d06da7a1f" name="Changes" comment="Додала для HealerDroid лікування кожні 3 раунди, а не постійно&#10;Видалила методи, які не використовувались">
+    <list default="true" id="3ab7b37f-edf0-4525-95c9-a54d06da7a1f" name="Changes" comment="Додала правильний рахунок камуфляжу у класі ChameleonDroid&#10;Також додала метод unfreeze у базовий клас Droid">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Battles/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Battles/Battle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Droids/AttackerDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/AttackerDroid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Droids/BomberDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/BomberDroid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Droids/ChameleonDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/ChameleonDroid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Droids/Droid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/Droid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Menu/DroidFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Menu/DroidFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Droids/HealerDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Droids/HealerDroid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/file/WorkWithFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/file/WorkWithFile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
@@ -158,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727284149351</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Додала правильний рахунок камуфляжу у класі ChameleonDroid&#10;Також додала метод unfreeze у базовий клас Droid">
+      <option name="closed" value="true" />
+      <created>1727290328578</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1727290328578</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -171,6 +183,7 @@
     <MESSAGE value="Закінчила роботу над програмою" />
     <MESSAGE value="Закінчила роботу над програмою2" />
     <MESSAGE value="Додала для HealerDroid лікування кожні 3 раунди, а не постійно&#10;Видалила методи, які не використовувались" />
-    <option name="LAST_COMMIT_MESSAGE" value="Додала для HealerDroid лікування кожні 3 раунди, а не постійно&#10;Видалила методи, які не використовувались" />
+    <MESSAGE value="Додала правильний рахунок камуфляжу у класі ChameleonDroid&#10;Також додала метод unfreeze у базовий клас Droid" />
+    <option name="LAST_COMMIT_MESSAGE" value="Додала правильний рахунок камуфляжу у класі ChameleonDroid&#10;Також додала метод unfreeze у базовий клас Droid" />
   </component>
 </project>

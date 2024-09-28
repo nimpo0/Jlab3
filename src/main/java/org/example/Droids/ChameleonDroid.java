@@ -69,6 +69,15 @@ public class ChameleonDroid extends Droid {
     }
 
     @Override
+    public void performAction(Droid enemy, WorkWithFile workWithFile) {
+        if (getRemainingCamouflage() == 0) {
+            activateCamouflage(workWithFile);
+        }
+        attack(enemy, workWithFile);
+        updateRound(workWithFile);
+    }
+
+    @Override
     public void takeDamage(int damage, WorkWithFile workWithFile) {
         if (remainingCamouflage >= 0) {
             logAndPrint(this.name + " уникнув атаки завдяки камуфляжу.", workWithFile);

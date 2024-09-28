@@ -33,6 +33,16 @@ public class AttackerDroid extends Droid {
         unfreeze(workWithFile);
     }
 
+    @Override
+    public void performAction(Droid enemy, WorkWithFile workWithFile) {
+        if (getCharge() < getRoundsToCharge()) {
+            attack(enemy, workWithFile);
+            updateRound(workWithFile);
+        } else {
+            strongAttack(enemy, workWithFile);
+        }
+    }
+
     public void charge(WorkWithFile workWithFile) {
         if (charge < roundsToCharge) {
             charge++;

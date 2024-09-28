@@ -45,6 +45,17 @@ public class BomberDroid extends Droid {
         unfreeze(workWithFile);
     }
 
+    @Override
+    public void performAction(Droid enemy, WorkWithFile workWithFile) {
+        if (shouldUseStrongAttack()) {
+            bombAttack(enemy, workWithFile);
+            resetRoundCounter();
+        } else {
+            attack(enemy, workWithFile);
+        }
+        updateRound(workWithFile);
+    }
+
     public boolean shouldUseStrongAttack() {
         return roundCounter % 3 == 0;
     }

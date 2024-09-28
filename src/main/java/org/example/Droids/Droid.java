@@ -64,6 +64,10 @@ public abstract class Droid {
 
     public abstract void updateRound(WorkWithFile workWithFile);
 
+    public void performAction(Droid enemy, WorkWithFile workWithFile) {
+        attack(enemy, workWithFile);
+    }
+
     public void takeDamage(int damage, WorkWithFile workWithFile) {
         this.setHealth(this.health - damage);
         logAndPrint(this.name + " отримав " + damage + " пошкоджень. Залишилось здоров'я: " + this.health, workWithFile);
